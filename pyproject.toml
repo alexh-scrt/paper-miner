@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "paper_miner"
+version = "0.1.0"
+description = "A Python library and CLI tool that ingests PDF or HTML scientific papers and automatically extracts numerical data with surrounding context using LLM-assisted parsing."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "paper_miner contributors" }
+]
+keywords = ["scientific", "pdf", "html", "extraction", "nlp", "llm", "data-mining"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing",
+]
+dependencies = [
+    "pdfplumber>=0.10.0",
+    "beautifulsoup4>=4.12.0",
+    "openai>=1.0.0",
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+paper-miner = "paper_miner.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/example/paper_miner"
+Repository = "https://github.com/example/paper_miner"
+Issues = "https://github.com/example/paper_miner/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["paper_miner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["paper_miner"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
