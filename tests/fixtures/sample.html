@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Scientific Paper – paper_miner Test Fixture</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 800px; margin: 0 auto; padding: 2rem; }
+    h1, h2 { color: #2c3e50; }
+    .abstract { background: #f4f4f4; padding: 1rem; border-left: 4px solid #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+    th { background: #e8e8e8; }
+    nav { background: #2c3e50; padding: 0.5rem; }
+    nav a { color: white; margin-right: 1rem; text-decoration: none; }
+    footer { font-size: 0.8rem; color: #888; margin-top: 2rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+  </style>
+  <script>
+    // This script content should be stripped by the ingestion layer.
+    console.log("navigation analytics");
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="#abstract">Abstract</a>
+    <a href="#methods">Methods</a>
+    <a href="#results">Results</a>
+    <a href="#discussion">Discussion</a>
+  </nav>
+
+  <h1>Effects of Novel Compound X on Cardiovascular Biomarkers:
+      A Randomised Controlled Trial</h1>
+
+  <p><strong>Authors:</strong> A. Researcher, B. Scientist, C. Analyst</p>
+  <p><strong>Journal:</strong> <em>Journal of Hypothetical Medicine</em>, 2024, Vol. 12, pp. 100–115.</p>
+  <p><strong>DOI:</strong> 10.0000/jhm.2024.12.100</p>
+
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <div class="abstract">
+      <p>
+        <strong>Background:</strong> Elevated low-density lipoprotein (LDL) cholesterol remains
+        a primary risk factor for cardiovascular disease, affecting approximately
+        38% of adults worldwide.
+      </p>
+      <p>
+        <strong>Objective:</strong> To assess the efficacy of Compound X (50 mg/day) versus
+        placebo on LDL cholesterol levels over a 12-week intervention period.
+      </p>
+      <p>
+        <strong>Methods:</strong> A total of 240 participants (mean age 54.3 ± 7.8 years;
+        52% female) were randomised 1:1 to receive either Compound X or matching placebo.
+        Fasting lipid panels were obtained at baseline and at weeks 4, 8, and 12.
+      </p>
+      <p>
+        <strong>Results:</strong> Compound X reduced LDL cholesterol by 32.4 mg/dL
+        (95% CI: 28.1–36.7 mg/dL) compared with placebo (p &lt; 0.001). Secondary outcomes
+        included a 15.2% reduction in total cholesterol and a non-significant change in
+        HDL cholesterol (−0.8 mg/dL; p = 0.42). Body mass index (BMI) remained stable
+        across both groups (mean 27.6 kg/m² at baseline vs. 27.4 kg/m² at week 12;
+        p = 0.61).
+      </p>
+      <p>
+        <strong>Conclusion:</strong> Compound X at 50 mg/day produced a clinically meaningful
+        and statistically significant reduction in LDL cholesterol with a favourable safety
+        profile over 12 weeks.
+      </p>
+    </div>
+  </section>
+
+  <section id="methods">
+    <h2>1. Methods</h2>
+
+    <h3>1.1 Study Design and Participants</h3>
+    <p>
+      This double-blind, placebo-controlled trial enrolled participants aged 40–75 years
+      with baseline LDL cholesterol between 130 mg/dL and 190 mg/dL. Exclusion criteria
+      included current statin use, liver enzyme elevations (&gt; 3× ULN), estimated
+      glomerular filtration rate (eGFR) &lt; 30 mL/min/1.73 m², or pregnancy.
+    </p>
+    <p>
+      Participants were recruited from 8 clinical sites across three countries between
+      January 2022 and August 2023. Written informed consent was obtained from all
+      participants prior to enrolment. The study was approved by each site's institutional
+      review board (IRB) and registered at ClinicalTrials.gov (NCT00000001).
+    </p>
+
+    <h3>1.2 Intervention</h3>
+    <p>
+      Eligible participants were randomly assigned in a 1:1 ratio to Compound X
+      (50 mg oral tablet once daily) or matched placebo for 12 weeks. Randomisation
+      was stratified by site and baseline LDL tertile using a permuted block design
+      with block sizes of 4 and 6.
+    </p>
+
+    <h3>1.3 Outcomes</h3>
+    <p>
+      The primary endpoint was change from baseline in fasting LDL cholesterol
+      (mg/dL) at week 12. Secondary endpoints included percentage change in total
+      cholesterol, HDL cholesterol, triglycerides, and non-HDL cholesterol at weeks
+      4, 8, and 12. Safety was assessed via adverse event reporting, liver function
+      tests (ALT, AST), and creatinine measurements at each visit.
+    </p>
+
+    <h3>1.4 Statistical Analysis</h3>
+    <p>
+      Sample size was calculated to detect a minimum difference of 20 mg/dL in LDL
+      reduction between groups, assuming a standard deviation of 35 mg/dL, 80% power,
+      and a two-sided alpha of 0.05. This required 96 participants per group; with
+      anticipated 20% dropout, 120 participants per group were enrolled (total N = 240).
+    </p>
+    <p>
+      The primary analysis used a mixed-effects model for repeated measures (MMRM)
+      with treatment, visit, treatment-by-visit interaction, and baseline LDL as
+      covariates. All analyses were conducted using Python 3.11 with SciPy 1.11.0
+      and statsmodels 0.14.0. A two-sided p-value &lt; 0.05 was considered statistically
+      significant.
+    </p>
+  </section>
+
+  <section id="results">
+    <h2>2. Results</h2>
+
+    <h3>2.1 Participant Characteristics</h3>
+    <p>
+      Of the 240 enrolled participants, 228 (95%) completed the 12-week treatment period.
+      Baseline characteristics were well balanced between groups (Table 1).
+      Mean baseline LDL cholesterol was 158.3 ± 18.6 mg/dL in the Compound X group
+      and 157.9 ± 19.2 mg/dL in the placebo group.
+    </p>
+
+    <table>
+      <caption>Table 1. Baseline Participant Characteristics</caption>
+      <thead>
+        <tr>
+          <th>Characteristic</th>
+          <th>Compound X (n = 120)</th>
+          <th>Placebo (n = 120)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Age, years (mean ± SD)</td>
+          <td>54.1 ± 7.6</td>
+          <td>54.5 ± 8.0</td>
+        </tr>
+        <tr>
+          <td>Female, n (%)</td>
+          <td>63 (52.5%)</td>
+          <td>62 (51.7%)</td>
+        </tr>
+        <tr>
+          <td>BMI, kg/m² (mean ± SD)</td>
+          <td>27.6 ± 4.1</td>
+          <td>27.5 ± 4.3</td>
+        </tr>
+        <tr>
+          <td>LDL cholesterol, mg/dL (mean ± SD)</td>
+          <td>158.3 ± 18.6</td>
+          <td>157.9 ± 19.2</td>
+        </tr>
+        <tr>
+          <td>Total cholesterol, mg/dL (mean ± SD)</td>
+          <td>221.4 ± 24.7</td>
+          <td>220.8 ± 25.1</td>
+        </tr>
+        <tr>
+          <td>HDL cholesterol, mg/dL (mean ± SD)</td>
+          <td>48.2 ± 10.3</td>
+          <td>47.9 ± 10.8</td>
+        </tr>
+        <tr>
+          <td>Triglycerides, mg/dL (mean ± SD)</td>
+          <td>142.6 ± 55.4</td>
+          <td>145.1 ± 57.2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 Primary Outcome</h3>
+    <p>
+      At week 12, participants in the Compound X group experienced a mean reduction
+      in LDL cholesterol of 32.4 mg/dL (95% CI: 28.1–36.7 mg/dL) from baseline,
+      compared with a mean reduction of 1.8 mg/dL (95% CI: −1.2 to 4.8 mg/dL) in
+      the placebo group. The between-group difference was −30.6 mg/dL (95% CI:
+      −35.1 to −26.1 mg/dL; p &lt; 0.001).
+    </p>
+    <p>
+      The effect was apparent as early as week 4, with Compound X reducing LDL by
+      21.3 mg/dL (95% CI: 17.8–24.8 mg/dL; p &lt; 0.001) relative to placebo at
+      that time point.
+    </p>
+
+    <h3>2.3 Secondary Outcomes</h3>
+    <p>
+      Total cholesterol was reduced by 15.2% in the Compound X group versus 0.9%
+      in the placebo group (p &lt; 0.001). Non-HDL cholesterol decreased by
+      29.8 mg/dL (SD 14.2 mg/dL) with Compound X compared with 1.3 mg/dL (SD 9.7 mg/dL)
+      with placebo (p &lt; 0.001).
+    </p>
+    <p>
+      Triglycerides showed a modest but significant reduction of 12.4 mg/dL in the
+      Compound X group (p = 0.03). HDL cholesterol did not differ significantly
+      between groups (Δ −0.8 mg/dL; p = 0.42).
+    </p>
+
+    <h3>2.4 Safety</h3>
+    <p>
+      Treatment-emergent adverse events (TEAEs) occurred in 34 participants (28.3%)
+      receiving Compound X and 31 participants (25.8%) receiving placebo (p = 0.65).
+      No serious adverse events were attributed to Compound X. Mean ALT levels
+      increased by 3.2 U/L in the Compound X group (within normal range;
+      reference &lt; 40 U/L), compared with 0.5 U/L in the placebo group (p = 0.08).
+      No participant discontinued due to liver enzyme elevations.
+    </p>
+  </section>
+
+  <section id="discussion">
+    <h2>3. Discussion</h2>
+    <p>
+      Our findings demonstrate that Compound X at 50 mg/day produces a clinically
+      meaningful reduction in LDL cholesterol of 32.4 mg/dL over 12 weeks—substantially
+      exceeding the pre-specified minimum clinically important difference of 20 mg/dL.
+      The magnitude of effect (approximately 20.5% relative reduction from a baseline of
+      158.3 mg/dL) is comparable to low-to-moderate intensity statin therapy.
+    </p>
+    <p>
+      Secondary lipid endpoints further support the beneficial lipid-modifying profile
+      of Compound X. A 15.2% reduction in total cholesterol and a 12.4 mg/dL decrease
+      in triglycerides are consistent with a multi-pathway mechanism of action.
+      The absence of a significant effect on HDL cholesterol (p = 0.42) is common
+      among LDL-targeting agents and does not detract from the overall favourable profile.
+    </p>
+    <p>
+      The safety profile was reassuring. The overall TEAE rate of 28.3% with Compound X
+      compared with 25.8% with placebo (p = 0.65) indicates no statistically significant
+      increase in adverse events. The small, non-significant rise in ALT (3.2 U/L;
+      p = 0.08) will be monitored in future longer-term studies.
+    </p>
+    <p>
+      Limitations include the 12-week follow-up duration, which precludes assessment of
+      hard cardiovascular outcomes, and the relatively homogeneous study population.
+      A larger phase III trial with 2-year follow-up is currently planned (target N = 3000;
+      estimated completion 2027).
+    </p>
+  </section>
+
+  <section id="references">
+    <h2>References</h2>
+    <ol>
+      <li>Smith A, Jones B. LDL cholesterol and cardiovascular risk: a meta-analysis of 42 studies
+          (n = 185,000 participants). <em>Lancet Cardiol.</em> 2020;8(3):210–219.</li>
+      <li>Brown C, et al. Compound X phase I safety and pharmacokinetics in 60 healthy volunteers.
+          <em>Clin Pharmacol Ther.</em> 2021;110(4):987–995.</li>
+      <li>World Heart Federation. Global cardiovascular disease fact sheet, 2023.
+          Available at: https://world-heart-federation.org. Accessed 1 January 2024.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>© 2024 Journal of Hypothetical Medicine. All rights reserved.</p>
+    <p>Correspondence: a.researcher@example.edu | ORCID: 0000-0000-0000-0001</p>
+  </footer>
+
+</body>
+</html>
